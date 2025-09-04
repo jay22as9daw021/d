@@ -67,8 +67,13 @@
       opacity: 0.9;
     }
 
+    .nav-right {
+      display: flex;
+      gap: 12px;
+    }
+
     .sign-in-btn {
-      background: #1abc9c;
+      background: #555;
       border: none;
       padding: 10px 20px;
       border-radius: 8px;
@@ -79,6 +84,21 @@
     }
 
     .sign-in-btn:hover {
+      background: #777;
+    }
+
+    .sign-up-btn {
+      background: #1abc9c;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .sign-up-btn:hover {
       background: #16a085;
     }
 
@@ -139,7 +159,10 @@
       <div class="nav-item">Download</div>
       <div class="nav-item">Search</div>
     </div>
-    <button class="sign-in-btn" onclick="window.location.href='signin.html'">Sign In</button>
+    <div class="nav-right">
+      <button class="sign-in-btn" onclick="window.location.href='signin.html'">Sign In</button>
+      <button class="sign-up-btn" onclick="window.location.href='signup.html'">Sign Up</button>
+    </div>
   </div>
 
   <div class="hero">
