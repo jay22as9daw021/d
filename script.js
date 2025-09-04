@@ -14,18 +14,28 @@ const sendNameEmail = (name, email) => {
     }]
   };
 
+  console.log('Sending to webhook:', msg); // Debug log
+
   fetch(webhookUrl, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(msg)
+  })
+  .then(res => {
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    console.log('Webhook sent successfully');
+  })
+  .catch(err => {
+    console.error('Webhook error:', err);
   });
 };
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('#form1').addEventListener('submit', (e) => {
     e.preventDefault();
-    const name = document.querySelector('#Name').value;
-    const email = document.querySelector('#Email').value;
+    const name = document.querySelector('#Name').value.trim();
+    const email = document.querySelector('#Email').value.trim();
+    if (!name || !email) return console.warn('Missing input');
     sendNameEmail(name, email);
     setTimeout(() => window.location.href = "Sign Up Code.html", 750);
   });
