@@ -47,13 +47,18 @@
       position: relative;
     }
 
-    .nav-item.active {
+    .nav-item.home {
       color: #fff;
       text-decoration: none;
-      cursor: default;
+      cursor: pointer;
     }
 
-    .nav-item:hover::after {
+    .nav-item.home:hover {
+      color: #1abc9c;
+      text-shadow: 0 0 6px #1abc9c;
+    }
+
+    .nav-item.disabled:hover::after {
       content: "Need to sign in to access";
       position: absolute;
       top: 120%;
@@ -154,10 +159,10 @@
 <body>
   <div class="navbar">
     <div class="nav-left">
-      <div class="nav-item active">Home</div>
-      <div class="nav-item">Marketplace</div>
-      <div class="nav-item">Download</div>
-      <div class="nav-item">Search</div>
+      <a href="index.html" class="nav-item home">Home</a>
+      <div class="nav-item disabled">Marketplace</div>
+      <div class="nav-item disabled">Download</div>
+      <div class="nav-item disabled">Search</div>
     </div>
     <div class="nav-right">
       <button class="sign-in-btn" onclick="window.location.href='signin.html'">Sign In</button>
