@@ -13,16 +13,18 @@
 
     html, body {
       height: 100%;
+      width: 100%;
       font-family: 'Inter', sans-serif;
       background: radial-gradient(circle at center, #1e1e2f, #0f0f1f);
       overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       position: relative;
     }
 
     .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       background: rgba(0, 0, 0, 0.75);
       padding: 50px 40px;
       border-radius: 20px;
@@ -146,7 +148,7 @@
 
   <script>
     // Generate particles
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 60; i++) {
       const p = document.createElement('span');
       p.style.left = Math.random() * 100 + '%';
       p.style.top = Math.random() * 100 + '%';
@@ -155,7 +157,7 @@
     }
 
     // Generate sparkles
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 40; i++) {
       const s = document.createElement('span');
       s.style.left = Math.random() * 100 + '%';
       s.style.top = Math.random() * 100 + '%';
